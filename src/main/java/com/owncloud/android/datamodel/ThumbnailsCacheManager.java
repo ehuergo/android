@@ -862,6 +862,7 @@ public final class ThumbnailsCacheManager {
         Drawable doAvatarInBackground() {
             Bitmap avatar = null;
 
+            // TODO escape username here?
             String accountName = mUserId + "@" + mServerName;
 
             ArbitraryDataProvider arbitraryDataProvider = new ArbitraryDataProvider(mContext.getContentResolver());

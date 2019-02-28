@@ -208,13 +208,20 @@ public class FileDetailSharingFragment extends Fragment implements UserListAdapt
     }
 
     private void setupView() {
-        setShareByLinkInfo(file.isSharedViaLink());
-        setShareWithUserInfo();
         setShareWithYou();
-        FileDetailSharingFragmentHelper.setupSearchView(
-            (SearchManager) fileDisplayActivity.getSystemService(Context.SEARCH_SERVICE), searchView,
-            fileDisplayActivity.getComponentName());
-        ThemeUtils.themeSearchView(getContext(), searchView, false);
+
+        if (file.canReshare()) {
+            setShareByLinkInfo(file.isSharedViaLink());
+            setShareWithUserInfo();
+            FileDetailSharingFragmentHelper.setupSearchView(
+                (SearchManager) fileDisplayActivity.getSystemService(Context.SEARCH_SERVICE), searchView,
+                fileDisplayActivity.getComponentName());
+            ThemeUtils.themeSearchView(getContext(), searchView, false);
+        } else {
+            searchView.setVisibility(View.GONE);
+            shareByLinkContainer.setVisibility(View.GONE);
+            noList.setText(R.string.reshare_not_allowed);
+        }
     }
 
     /**

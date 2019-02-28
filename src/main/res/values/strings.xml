@@ -862,6 +862,7 @@
     <string name="notification_action_failed">Failed to execute action.</string>
     <string name="remove_push_notification">Remove</string>
     <string name="new_notification">New Notification</string>
+    <string name="reshare_not_allowed">Resharing is not allowed</string>
     <string name="storage_choose_location">Choose storage location</string>
     <string name="storage_internal_storage">Internal storage</string>
     <string name="storage_camera">Camera</string>
